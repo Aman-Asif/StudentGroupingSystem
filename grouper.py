@@ -11,7 +11,6 @@ if TYPE_CHECKING:
     from course import Course, Student
 
 
-# Provided helper
 def slice_list(lst: list[Any], n: int) -> list[list[Any]]:
     """Return a list containing slices of <lst> in order. Each slice is a
     list of size <n> containing the next <n> elements in <lst>.
@@ -33,7 +32,6 @@ def slice_list(lst: list[Any], n: int) -> list[list[Any]]:
     return slices
 
 
-# Provided helper
 def find_best_addition_to_group(survey: Survey, members: list[Student],
                                 non_members: list[Student]) -> Student:
     """Find the best student in <non_members> to add to the group <members>,
@@ -54,7 +52,6 @@ def find_best_addition_to_group(survey: Survey, members: list[Student],
     return best_student
 
 
-# Provided helper
 def random_swap(lst: list[list[Any]], seed: int = 0) -> None:
     """Swap two random elements from distinct sublists of <lst>.
 
@@ -90,7 +87,6 @@ def random_swap(lst: list[list[Any]], seed: int = 0) -> None:
     lst[l_1][i_1], lst[l_2][i_2] = lst[l_2][i_2], lst[l_1][i_1]
 
 
-# Provided helper
 def total_score(survey: Survey, groups: list[list[Student]]) -> float:
     """Return the total score of the grouping of students in <groups> according
     to <survey>.
@@ -107,7 +103,6 @@ def total_score(survey: Survey, groups: list[list[Student]]) -> float:
     return survey.score_grouping(g)
 
 
-# Provided helper
 def accept(old_score: float, new_score: float, temperature: float, seed: int
            ) -> bool:
     """If <new_score> is at least as high as <old_score>, return True.
