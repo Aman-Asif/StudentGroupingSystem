@@ -9,10 +9,6 @@ from survey import (
 from criterion import HomogeneousCriterion, HeterogeneousCriterion
 from grouper import Group, Grouping, AlphaGrouper, GreedyGrouper
 
-###############################################################################
-# Task 2 Test cases
-###############################################################################
-
 
 def test_student_set_get() -> None:
     """Setting then getting an answer returns it."""
@@ -48,10 +44,6 @@ def test_student_has_answer_toggle() -> None:
     assert s.has_answer(q)
 
 
-###############################################################################
-# Task 3 Test cases
-###############################################################################
-
 def test_course_students_sorted() -> None:
     """Students returned sorted by id."""
     c = Course("CSC148")
@@ -84,10 +76,6 @@ def test_course_all_answered_false() -> None:
     assert not c.all_answered(survey)
 
 
-###############################################################################
-# Task 4 Test cases
-###############################################################################
-
 def test_yesno_accept_bool() -> None:
     """Accepts True and False answers."""
     q = YesNoQuestion(1, "Q?")
@@ -109,10 +97,6 @@ def test_yesno_similarity() -> None:
     assert q.get_similarity(Answer(True), Answer(False)) == 0.0
 
 
-###############################################################################
-# Task 5 Test cases
-###############################################################################
-
 def test_answer_valid_mcq() -> None:
     """Valid MCQ answer returns True."""
     q = MultipleChoiceQuestion(1, "Pick", ["a", "b"])
@@ -124,10 +108,6 @@ def test_answer_invalid_numeric() -> None:
     q = NumericQuestion(2, "Rate", 1, 5)
     assert not Answer("3").is_valid(q)
 
-
-###############################################################################
-# Task 6 Test cases
-###############################################################################
 
 def test_homogeneous_one() -> None:
     """Single answer scores 1."""
@@ -160,10 +140,6 @@ def test_homogeneous_three_avg() -> None:
     assert crit.score_answers(q, ans) == 1 / 3
 
 
-###############################################################################
-# Task 7 Test cases
-###############################################################################
-
 def test_group_len() -> None:
     """Group length equals member count."""
     g = Group([Student(1, "A"), Student(2, "B")])
@@ -184,10 +160,6 @@ def test_group_members_copy() -> None:
     assert g.get_members() is not members
 
 
-###############################################################################
-# Task 8 Test cases
-###############################################################################
-
 def test_grouping_reject_overlap() -> None:
     """Overlapping groups are rejected."""
     s = Student(1, "A")
@@ -197,10 +169,6 @@ def test_grouping_reject_overlap() -> None:
     assert grouping.add_group(g1)
     assert not grouping.add_group(g2)
 
-
-###############################################################################
-# Task 9 Test cases
-###############################################################################
 
 def test_survey_get_questions() -> None:
     """Returns all questions sorted by id."""
@@ -224,10 +192,6 @@ def test_survey_set_criterion() -> None:
     survey = Survey([q])
     assert survey.set_criterion(HeterogeneousCriterion(), q)
 
-
-###############################################################################
-# Task 10 Test cases
-###############################################################################
 
 def test_alpha_grouping() -> None:
     """Alpha grouper groups by name order."""
