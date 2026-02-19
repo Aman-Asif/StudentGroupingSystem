@@ -5,7 +5,6 @@ if TYPE_CHECKING:
     from survey import Answer, Survey, Question
 
 
-# Provided helper function
 def sort_students(lst: list[Student], attribute: str) -> list[Student]:
     """Return a shallow copy of <lst> sorted by <attribute> in non-decreasing
     order.
